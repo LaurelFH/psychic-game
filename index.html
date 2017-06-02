@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Guess My Letter</title>
+	<!--stylehseet links-->
+
+	<!--reset link-->
+
+	<!--optional bootstrap link-->
+
+	<!--Javascript link from document once it works-->
+</head>
+<body>
+	
+	<h1>Guess my letter</h1>
+	<p>Press any key to begin the game</p>
+	
+	<script type="text/Javascript">
+
+//Variables
+
+var wins = 0;
+
+var losses = 0;
+
+var chancesLeft = 0;
+
+var computerLetters = ["a", "b", "c", "d", "e", "f", "g", "h", "i", "j", "k", "l", "m", "n", "o", "p", "q", "r", "s", "t", "u", "v", "w", "x", "y", "z"]
+var guessedLetter = [];
+
+//Functions 
+
+//initates the keystroke to start the functions below and the game;  Captures keyboard input from the player to start the game 
+      document.onkeyup = function(event) {
+
+		var playerGuess = event.key;
+
+		guessedLetter.push()
+
+//sets computerGuess varible to random choice from the array?
+
+var computerGuess = computerLetters[Math.floor(Math.random() *computerLetters)]; 
+
+
+//Letter Choices 
+
+if (playerGuess == computerGuess){
+
+console.log("You guessed my letter!"); {wins++
+}
+
+};
+
+
+else{console.log("Try another letter!"); {losses++; chancesLeft++
+};
+
+
+//notes for scoring 
+
+var score = "<p>wins: " + wins + "</p>" +
+"<p>losses: " + losses + "</p>"+
+"<p>Chances Left: " + chancesLeft +"</p>"; 
+
+document.querySelector(#game).innerHTML = score
+
+
+
+
+
+
+
+
+	</script>
+
+
+
+</body>
+</html>
