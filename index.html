@@ -70,12 +70,14 @@ document.onkeyup = function(event) {
 	//Compare the player's guess to the computer's guess 
 	compareGuess();
 
-	//eval the win and loss conditions
-	winLoss();
-
 	//update the screen so the player can see results/action 
 	updatePage();
 
+	//Resets the game after each guess by the player 
+	if (chancesLeft == 0){
+		losses++;
+		resetGame();
+	}
 }
 
 
@@ -90,7 +92,7 @@ function pickRandomLetter () {
 function compareGuess(){
 	if (playerGuess.toLowerCase() == computerGuess){
 		console.log("You guessed my letter!"); 
-		wins++;
+		wins++;		
 	}
 	else{
 		console.log("Try another letter!"); 
@@ -107,10 +109,11 @@ function updatePage(){
 
 }
 
-
 //function to display guessed letters 
 function displayGuessedLetters(){
 	var displayletters = "<p>You have guessed: " + guessedLetters.toString() + "</p>";
+
+	document.getElementById("guessesDisplay").innerHTML = displayletters;
 
 }
 
@@ -123,22 +126,16 @@ function displayScore(){
 
 //document.querySelector("scoredisplay").innerHTML = score;
 //how to display the score to player
-document.getElementById("scoreDisplay").innerText = score;
+document.getElementById("scoreDisplay").innerHTML = score;
 
 }
 
-//function to display win/loss
-function displayWinLoss(){
- var winmessages = "";
-
- var lossmessages = "";
-
-
-
+//function to reset variables for the game 
+function resetGame(){
+	chancesLeft = 10;
+	computerGuess = "";
+	guessedLetters= [];
 }
-
-
-
 
 
 
