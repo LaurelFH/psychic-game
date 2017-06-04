@@ -16,9 +16,27 @@
 	<h1>Hello and let's play a game called "Guess my letter!"</h1>
 	<p>Press any key to begin the game and tell me what you think my letter is...</p>
 	
+<!--empty div to put score-->
+	<div id="scoreDisplay">
+		
+
+	</div>
+
+
+<!--empty div to put guesses-->
+
+	<div id= "guessesDisplay">
+
+	</div>
+<!--empty div to put the win and loss message-->
+	<div id="winLossDisplay">
+
+	</div>
+
+
 	<script type="text/Javascript">
 
-//Variables to be used to track score and computer/play guesses
+//Variables to be used to track score and computer/player guesses
 
 var wins = 0;
 
@@ -26,54 +44,102 @@ var losses = 0;
 
 var chancesLeft = 10;
 
-var computerLetters = ["a", "b", "c", "d", "e", "f", "g", "h", "i", "j", "k", "l", "m", "n", "o", "p", "q", "r", "s", "t", "u", "v", "w", "x", "y", "z"]
+var computerLetters = ["a", "b", "c", "d", "e", "f", "g", "h", "i", "j", "k", "l", "m", "n", "o", "p", "q", "r", "s", "t", "u", "v", "w", "x", "y", "z"];
 var guessedLetters = [];
 
-//Functions 
+var computerGuess ="";
 
-//initates the keystroke to start the functions below and the game;  Captures keyboard input from the player to start the game 
-      document.onkeyup = function(event) {
+var playerGuess="";
 
-		var playerGuess = event.key;
+//Action/Evaluations 
 
-		if (playerGuess.toLowerCase() == "p")
-		{
+//preps the page so the html loads first and the player can see the instructions
 
-		}
+//Captures keyboard input from the player 
+document.onkeyup = function(event) {
 
-		guessedLetter.push() 
+	//Computer selects random letter if this is the first turn computerGuess will be equal to the starting empty string 
+	if(computerGuess == ""){
+		pickRandomLetter();
+	}
 
-//sets computerGuess varible to random choice from the array?
+	//Records the player's guess/keystroke 
+	playerGuess = event.key;
+	guessedLetters.push(playerGuess.toLowerCase());
 
-function computerGuess (computerGuess) {
+	//Compare the player's guess to the computer's guess 
+	compareGuess();
 
-var computerGuess = computerLetters[Math.floor(Math.random() * 26)]; 
+	//eval the win and loss conditions
+	winLoss();
 
-	//loop to pick one random letter to display
+	//update the screen so the player can see results/action 
+	updatePage();
 
-	for (var i = 0; i < computerLetters.length; i++);
-	
-
-
-//Comparisons for player and computer letter selections 
-
-if (playerGuess == computerGuess){
-
-console.log("You guessed my letter!"); {wins++
-};
-
-
-else{console.log("Try another letter!"); losses++; chancesLeft--;
 }
 
 
-//notes for scoring 
+//sets computerGuess variable to random choice from the array to start the game
+function pickRandomLetter () {
 
-var score = "<p>wins: " + wins + "</p>" +
-"<p>losses: " + losses + "</p>"+
-"<p>Chances Left: " + chancesLeft +"</p>"; 
+	//should be 26 for 26 letter, but only 1 letter will be selected
+	computerGuess = computerLetters[Math.floor(Math.random() * 26)]; 
+}
 
-document.querySelector(#game).innerHTML = score
+//function to compare player and computer letter selection 
+function compareGuess(){
+	if (playerGuess.toLowerCase() == computerGuess){
+		console.log("You guessed my letter!"); 
+		wins++;
+	}
+	else{
+		console.log("Try another letter!"); 
+		chancesLeft--;
+	}
+
+}
+
+
+//Function to update the page for the player 
+function updatePage(){
+	displayGuessedLetters();
+	displayScore();
+
+}
+
+
+//function to display guessed letters 
+function displayGuessedLetters(){
+	var displayletters = "<p>You have guessed: " + guessedLetters.toString() + "</p>";
+
+}
+
+
+//displaying the results of the score each round
+function displayScore(){
+	var score = "<p>wins: " + wins + "</p>" +
+	"<p>losses: " + losses + "</p>"+
+	"<p>Chances Left: " + chancesLeft +"</p>"; 
+
+//document.querySelector("scoredisplay").innerHTML = score;
+//how to display the score to player
+document.getElementById("scoreDisplay").innerText = score;
+
+}
+
+//function to display win/loss
+function displayWinLoss(){
+ var winmessages = "";
+
+ var lossmessages = "";
+
+
+
+}
+
+
+
+
 
 
 	</script>
