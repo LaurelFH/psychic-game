@@ -13,12 +13,12 @@
 </head>
 <body>
 	
-	<h1>Guess my letter</h1>
-	<p>Press any key to begin the game</p>
+	<h1>Hello and let's play a game called "Guess my letter!"</h1>
+	<p>Press any key to begin the game and tell me what you think my letter is...</p>
 	
 	<script type="text/Javascript">
 
-//Variables
+//Variables to be used to track score and computer/play guesses
 
 var wins = 0;
 
@@ -38,28 +38,33 @@ var guessedLetters = [];
 
 		if (playerGuess.toLowerCase() == "p")
 		{
-			
+
 		}
 
 		guessedLetter.push() 
 
 //sets computerGuess varible to random choice from the array?
 
-var computerGuess = computerLetters[Math.floor(Math.random() *computerLetters)]; 
+function computerGuess (computerGuess) {
+
+var computerGuess = computerLetters[Math.floor(Math.random() * 26)]; 
+
+	//loop to pick one random letter to display
+
+	for (var i = 0; i < computerLetters.length; i++);
+	
 
 
-//Letter Choices 
+//Comparisons for player and computer letter selections 
 
 if (playerGuess == computerGuess){
 
 console.log("You guessed my letter!"); {wins++
+};
+
+
+else{console.log("Try another letter!"); losses++; chancesLeft--;
 }
-
-};
-
-
-else{console.log("Try another letter!"); {losses++; chancesLeft++
-};
 
 
 //notes for scoring 
@@ -69,12 +74,6 @@ var score = "<p>wins: " + wins + "</p>" +
 "<p>Chances Left: " + chancesLeft +"</p>"; 
 
 document.querySelector(#game).innerHTML = score
-
-
-
-
-
-
 
 
 	</script>
