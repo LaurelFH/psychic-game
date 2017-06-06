@@ -1,45 +1,11 @@
 /*style details for the psychic game*/
-
-.jumbotron{
-
-
+html { 
+  background:  url(https://media.giphy.com/media/p6uElDP7DTo2c/giphy.gif) no-repeat center center fixed; 
+  background-size: cover;
 }
 
-.container-fluid{
-
-
-}
-
-
-#scoreDisplay{
-
-
-}
-
-
-#guessesDiplay{
-
-
-}
-
-
-#winLossDisplay{
-
-
-}
-
-.panel panel-default{
-
-
-}
 
 p{
-	font-family: 'Barrio', cursive;
-
-
+	font-family: 'Mogra', cursive;
 }
 
-h1{
-
-	
-}
