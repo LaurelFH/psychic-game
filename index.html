@@ -7,6 +7,8 @@
 
 	<!--reset link-->
 	<link rel = "stylesheet" type = "text/css" href="assets/css/reset.css">
+	<!--google font link-->
+	<link href="https://fonts.googleapis.com/css?family=Barrio" rel="stylesheet">
 	<!--css file-->
 	<link rel = "stylesheet" type = "text/css" href="assets/css/style.css">
 	<!-- Latest compiled and minified CSS for Bootstrap-->
@@ -14,22 +16,35 @@
 
 </head>
 <body>
-	<div class="jumbotron">
+<div class="jumbotron">
 	
 		<h1>Hello and let's play a game called "Guess my letter!"</h1>
 		<p>Press any key to begin the game and tell me what you think my letter is...</p>
-	</div>
+</div>
 
 <!--main div container of a full-width to add rows for bootstrap-->
 <div class="container-fluid">
 
-<!--empty div to put score-->
-	<div class="panel panel-default" id="scoreDisplay"></div>
+	<div class="row">
 
+		<div class="col-md-6">
+	<!--empty div to put score-->
+			<div class="panel panel-default" id="scoreDisplay">
+				
+			</div>
 
+		</div>
 <!--empty div to put guesses-->
-	<div class="panel panel-default" id= "guessesDisplay"></div>
-	
+		<div class="col-md-6">
+
+			<div class="panel panel-default" id= "guessesDisplay">
+				
+			</div>
+
+		</div>
+
+</div><!--ends row-->
+
 <!--empty div to put the win and loss message
 <div class="panel panel-default" id="winLossDisplay"></div>
 -->
